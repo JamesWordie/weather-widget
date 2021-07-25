@@ -1,9 +1,12 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
+import SearchBar from './SearchBar';
 
 const App = () => {
-  return <FontAwesomeIcon icon={faCoffee} />;
+  return (
+    <div className="container">
+      <SearchBar />
+    </div>
+  );
 };
 
 export default App;
