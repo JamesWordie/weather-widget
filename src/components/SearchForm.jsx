@@ -16,20 +16,20 @@ const SearchForm = props => {
       <div className="">
         <label className='form-label my-3'>{label}</label>
         <input className='form-control mb-1' {...input} />
-{/*        {this.renderError(meta)}
-*/}      </div>
+        {renderError(meta)}
+      </div>
     );
   }
 
-  // const rednerError = ({ error, touched }) => {
-  //   if (touched && error) {
-  //     return (
-  //       <div className="alert alert-danger" role="alert">
-  //         <p className="text-muted my-0">{error}</p>
-  //       </div>
-  //     );
-  //   }
-  // }
+  const renderError = ({ error, touched }) => {
+    if (touched && error) {
+      return (
+        <div className="alert alert-danger" role="alert">
+          <p className="text-muted my-0">{error}</p>
+        </div>
+      );
+    }
+  }
 
   const onSubmit = formValues => {
     props.onSubmit(formValues);
