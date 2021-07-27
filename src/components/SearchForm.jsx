@@ -32,14 +32,13 @@ const SearchForm = props => {
   // }
 
   const onSubmit = formValues => {
-    console.log(formValues)
     props.onSubmit(formValues);
   }
 
   return (
     <Form
       initialValues={props.initialValues}
-      onSubmit={props.onSubmit}
+      onSubmit={onSubmit}
       validate={validate}
       render={({ handleSubmit }) => (
         <form onSubmit={handleSubmit} className=''>
