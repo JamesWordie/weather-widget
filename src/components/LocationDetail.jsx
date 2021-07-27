@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { geocodeSearch } from '../actions';
+import Loading from './Loading';
 
 class LocationDetail extends React.Component {
   render() {
@@ -8,14 +9,7 @@ class LocationDetail extends React.Component {
 
     if (location === 'Edinburgh') {
       return (
-        <div className="row justify-content-center align-items-center my-5">
-          <div className="col-6 text-center d-inline-flex justify-content-center align-items-center w-100">
-            <span className="mx-4">Make your search now..</span>
-            <div className="spinner-border text-info" role="status">
-              <span className="visually-hidden">Loading...</span>
-            </div>
-          </div>
-        </div>
+        <Loading />
       );
     }
     return (

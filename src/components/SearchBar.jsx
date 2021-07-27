@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { geocodeSearch } from '../actions';
+import { fetchGeocodeAndWeather } from '../actions';
 import SearchForm from './SearchForm';
 
 class SearchBar extends React.Component {
   onSubmit = formValues => {
-    this.props.geocodeSearch(formValues)
+    this.props.fetchGeocodeAndWeather(formValues)
   }
 
   render() {
@@ -19,4 +19,4 @@ class SearchBar extends React.Component {
   }
 }
 
-export default connect(null, { geocodeSearch })(SearchBar);
+export default connect(null, { fetchGeocodeAndWeather })(SearchBar);
