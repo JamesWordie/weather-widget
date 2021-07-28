@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import WeatherDaily from './WeatherDaily';
 
 // class Weather extends React.Component {
@@ -20,14 +21,23 @@ import WeatherDaily from './WeatherDaily';
 
 // export default connect(mapStateToProps, {})(Weather);
 
-const Weather = () => {
-  return (
-    <div className="col-md-8 my-5">
-      <div className="card">
-        <WeatherDaily />
+class Weather extends React.Component {
+  render() {
+    if (this.props.weather.location === 'Edinburgh') {
+      return null;
+    }
+    return (
+      <div className="col-md-8 my-5">
+        <div className="card">
+          <WeatherDaily />
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 };
 
-export default Weather;
+const mapStateToProps = state => {
+  return { weather: state.weather }
+}
+
+export default connect(mapStateToProps, {})(Weather);

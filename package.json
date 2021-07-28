@@ -16,6 +16,7 @@
     "bootstrap-icons": "^1.5.0",
     "final-form": "^4.20.2",
     "jquery": "^3.6.0",
+    "mapbox-gl": "^2.3.1",
     "popper.js": "^1.16.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
