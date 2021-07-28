@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import App from './components/app';
 import reducers from './reducers';
+import './index.css';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
