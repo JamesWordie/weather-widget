@@ -13,15 +13,23 @@ class LocationDetail extends React.Component {
     }
 
     const locationResult = this.props.location;
+    const currentWeather = this.props.weather.current;
     return (
       <div className="col-md-4 my-5">
         <div className="card">
           <div className="card-body">
-            <h4 className="card-title">{locationResult.adminArea4}</h4>
-            <h6 className="card-subtitle text-muted">{locationResult.adminArea1}</h6>
-            <span className="coords d-inline-flex">
-              <p className="me-2">Lat: {locationResult.latLng.lat}</p>
-              <p className="me-2">Long: {locationResult.latLng.lng}</p>
+            <span className="d-inline-flex justify-content-between w-100 align-items-center">
+              <div className="d-inline-flex align-items-end">
+                <h4 className="card-title">{locationResult.adminArea4}</h4>
+                <h6 className="card-title text-muted ml-2">{locationResult.adminArea1}</h6>
+              </div>
+              <img src={`http://openweathermap.org/img/wn/${currentWeather.weather.map(w => w.icon)}@2x.png`} alt="weather.icon" />
+            </span>
+            <h3 className="card-subtitle text-bold">{parseInt(currentWeather.temp)} C</h3>
+            <p className="card-text">{currentWeather.weather.map(w => w.description)}</p>
+            <span className="d-inline-flex">
+              <p className="me-2"><i class="fas fa-sun"></i> {new Date(currentWeather.sunrise * 1000).toLocaleTimeString('en-UK', {hour: '2-digit', minute: '2-digit'})}</p>
+              <p className="me-2"><i class="fas fa-moon"></i> {new Date(currentWeather.sunset * 1000).toLocaleTimeString('en-UK', {hour: '2-digit', minute: '2-digit'})}</p>
             </span>
           </div>
         </div>
@@ -31,7 +39,7 @@ class LocationDetail extends React.Component {
 }
 
 const mapStateToProps = state => {
-  return { location: state.location }
+  return { location: state.location, weather: state.weather }
 }
 
 export default connect(mapStateToProps, {})(LocationDetail);

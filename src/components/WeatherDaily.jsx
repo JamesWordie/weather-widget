@@ -9,7 +9,6 @@ class WeatherDaily extends React.Component {
           const date = new Date(day.dt * 1000);
           return (
             <div className="card m-2" key={day.dt} style={{ width: '30%'}}>
-                      <i className="bi bi-umbrella"></i>
               <div className="card-header">
                 <h5 className="card-title text-center">{new Intl.DateTimeFormat('en-UK', { weekday: 'long' }).format(date)}</h5>
                 <h5 className="card-subtitle text-muted text-center">{date.toLocaleDateString('en-UK')}</h5>
@@ -28,7 +27,10 @@ class WeatherDaily extends React.Component {
                     </div>
                     <div className="col-6 text-center text-muted">{day.weather.map(w => w.description)}</div>
                     <div className="col-6 text-center">
-                      <h6>{parseInt(day.rain * 10)}%</h6>
+                      <span className="d-inline-flex">
+                        <i className="fas fa-umbrella"></i>
+                        <h6 className="ml-2">{parseInt(day.rain * 10)}%</h6>
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -43,7 +45,7 @@ class WeatherDaily extends React.Component {
   render() {
     const daily = this.props.weather.daily;
     return (
-      <div className="d-inline-flex flex-wrap justify-content-evenly">
+      <div className="d-inline-flex flex-wrap justify-content-evenly py-2">
         {this.renderedDailyResult(daily)}
       </div>
     );

@@ -1,5 +1,4 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import WeatherDaily from './WeatherDaily';
 
 // class Weather extends React.Component {
