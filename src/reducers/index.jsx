@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
 import geocodeReducer from './geocodeReducer';
+import weatherReducer from './weatherReducer';
 
 export default combineReducers({
-  geocode: geocodeReducer
+  location: geocodeReducer,
+  weather: weatherReducer
 });

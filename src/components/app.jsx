@@ -1,6 +1,7 @@
 import React from 'react';
 import SearchBar from './SearchBar';
 import LocationDetail from './LocationDetail';
+import Weather from './Weather'
 
 const App = () => {
   return (
@@ -12,10 +13,10 @@ const App = () => {
         <>
           <LocationDetail />
         </>
-{/*        <div className="col-md-8">
+        <>
           <Weather />
-        </div>
-        <div className="col-md-4">
+        </>
+{/*    <div className="col-md-4">
           <Time />
         </div>
         <div className="col-md-8">

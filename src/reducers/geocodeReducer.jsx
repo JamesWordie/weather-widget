@@ -7,7 +7,7 @@ const INITIAL_SEARCH = {
 const geocodeReducer  = (state = INITIAL_SEARCH, action) => {
   switch (action.type) {
     case GEOCODE:
-      return { ...state, location: action.payload};
+      return action.payload;
     default:
       return state;
   }

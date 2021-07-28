@@ -6,8 +6,8 @@ export const WEATHER = 'WEATHER';
 export const fetchGeocodeAndWeather = ({ location }) => async (dispatch, getState) => {
   await dispatch(geocodeSearch(location));
 
-  const { lat } = getState().geocode.location.latLng;
-  const { lng } = getState().geocode.location.latLng;
+  const { lat } = getState().location.latLng;
+  const { lng } = getState().location.latLng;
 
   await dispatch(weatherSearch(lat, lng));
 }
@@ -30,13 +30,12 @@ export const weatherSearch = (lat, long) => async dispatch => {
       lat,
       lon: long,
       // come back to at later date and add in checkbox for hourly/daily, etc
-      exclude: 'hourly,minutely'
+      exclude: 'hourly,minutely',
+      units: 'metric'
     }
   });
 
   const result = response.data;
-
-  console.log(result);
 
   dispatch({ type: WEATHER, payload: result })
 }
