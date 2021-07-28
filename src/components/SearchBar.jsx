@@ -8,6 +8,10 @@ class SearchBar extends React.Component {
     this.props.fetchGeocodeAndWeather(formValues)
   }
 
+  // componentDidMount() {
+  //   this.props.fetchGeocodeAndWeather('Edinburgh');
+  // }
+
   render() {
     return (
       <div className="row justify-content-center">

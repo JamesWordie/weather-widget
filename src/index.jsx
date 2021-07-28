@@ -5,6 +5,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import reduxThunk from 'redux-thunk';
 
 import 'bootstrap/dist/css/bootstrap.css';
+import 'mapbox-gl/dist/mapbox-gl.css';
 import App from './components/app';
 import reducers from './reducers';
 

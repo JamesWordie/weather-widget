@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Loading from './Loading';
+import Mapbox from './Mapbox';
 
 class LocationDetail extends React.Component {
   render() {
@@ -36,6 +37,9 @@ class LocationDetail extends React.Component {
               <p className="me-2"><i className="fas fa-moon"></i> {new Date(currentWeather.sunset * 1000).toLocaleTimeString('en-UK', {hour: '2-digit', minute: '2-digit'})}</p>
             </span>
           </div>
+        </div>
+        <div className="card mt-5">
+          <Mapbox />
         </div>
       </div>
     );
