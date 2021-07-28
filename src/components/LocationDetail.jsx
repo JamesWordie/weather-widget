@@ -12,6 +12,10 @@ class LocationDetail extends React.Component {
       );
     }
 
+    if (this.props.weather.current === undefined) {
+      return <Loading />
+    }
+
     const locationResult = this.props.location;
     const currentWeather = this.props.weather.current;
     return (
@@ -28,8 +32,8 @@ class LocationDetail extends React.Component {
             <h3 className="card-subtitle text-bold">{parseInt(currentWeather.temp)} C</h3>
             <p className="card-text">{currentWeather.weather.map(w => w.description)}</p>
             <span className="d-inline-flex">
-              <p className="me-2"><i class="fas fa-sun"></i> {new Date(currentWeather.sunrise * 1000).toLocaleTimeString('en-UK', {hour: '2-digit', minute: '2-digit'})}</p>
-              <p className="me-2"><i class="fas fa-moon"></i> {new Date(currentWeather.sunset * 1000).toLocaleTimeString('en-UK', {hour: '2-digit', minute: '2-digit'})}</p>
+              <p className="me-2"><i className="fas fa-sun"></i> {new Date(currentWeather.sunrise * 1000).toLocaleTimeString('en-UK', {hour: '2-digit', minute: '2-digit'})}</p>
+              <p className="me-2"><i className="fas fa-moon"></i> {new Date(currentWeather.sunset * 1000).toLocaleTimeString('en-UK', {hour: '2-digit', minute: '2-digit'})}</p>
             </span>
           </div>
         </div>
