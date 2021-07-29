@@ -2,7 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Loading from './Loading';
 import Mapbox from './Mapbox';
-import Clock from './Clock';
+// import Clock from './Clock';
+import ReactClock from './ReactClock';
 
 class LocationDetail extends React.Component {
   render() {
@@ -21,10 +22,9 @@ class LocationDetail extends React.Component {
     const locationResult = this.props.location;
     const currentWeather = this.props.weather.current;
 
-    const localTime = this.props.weather.current.dt + this.props.weather.timezone_offset - 3600;
-    console.log(localTime)
+    const localTime = (this.props.weather.timezone_offset - 3600);
     return (
-      <div className="col-md-4 my-5">
+      <div className="col-md-4 my-5 d-flex flex-column">
         <div className="card">
           <div className="card-body">
             <span className="d-inline-flex justify-content-between w-100 align-items-center">
@@ -47,9 +47,10 @@ class LocationDetail extends React.Component {
         <div className="card mt-4">
           <Mapbox />
         </div>
-        <div className="card mt-4 clock-card">
-{/*          <Clock time={localTime} />
-*/}        </div>
+        <div className="card mt-4 p-5 clock-card">
+          {/* <Clock time={localTime} /> */}
+          <ReactClock time={localTime} />
+        </div>
       </div>
     );
   }

@@ -13,9 +13,9 @@ const SearchForm = props => {
 
   const renderInput = ({ input, label, meta }) => {
     return (
-      <div className="">
-        <label className='form-label my-3'>{label}</label>
-        <input className='form-control mb-1' {...input} />
+      <div style={{ width: 'inherit' }}>
+        {/* <label className='form-label my-3'>{label}</label> */}
+        <input placeholder={label} className='form-control mb-1' {...input} />
         {renderError(meta)}
       </div>
     );
@@ -41,7 +41,7 @@ const SearchForm = props => {
       onSubmit={onSubmit}
       validate={validate}
       render={({ handleSubmit }) => (
-        <form onSubmit={handleSubmit} className=''>
+        <form onSubmit={handleSubmit} className='mt-3 d-inline-flex justify-content-evenly align-items-baseline w-100'>
           <Field name='location' component={renderInput} label='Enter Location' />
           <button className="btn btn-outline-primary">Search</button>
         </form>

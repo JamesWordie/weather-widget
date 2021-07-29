@@ -1,8 +1,6 @@
 import React from 'react';
 import ReactMapboxGl, { Marker } from 'react-mapbox-gl';
 import { connect } from 'react-redux';
-import Loading from './Loading';
-
 
 export const Map = ReactMapboxGl({
   accessToken: process.env.REACT_APP_API_KEY_MAPBOX
