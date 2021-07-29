@@ -6,23 +6,19 @@ import Weather from './Weather'
 
 const App = () => {
   return (
-    <div className="container">
+    <div>
       <>
-        <SearchBar />
+          <SearchBar />
       </>
-      <div className="row">
-        <>
-          <LocationDetail />
-        </>
-        <>
-          <Weather />
-        </>
-{/*    <div className="col-md-4">
-          <Time />
-        </div>*/}
-{/*        <>
-          <Mapbox />
-        </>*/}
+      <div className="container">
+        <div className="row">
+          <>
+            <LocationDetail />
+          </>
+          <>
+            <Weather />
+          </>
+        </div>
       </div>
     </div>
   );

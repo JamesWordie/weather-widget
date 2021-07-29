@@ -27,10 +27,10 @@ class Weather extends React.Component {
       return null;
     }
     return (
-      <div className="col-md-8 my-5">
-        <div className="card">
+      <div className="col-lg-8 my-5">
+        <>
           <WeatherDaily />
-        </div>
+        </>
       </div>
     );
   }

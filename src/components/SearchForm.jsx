@@ -41,9 +41,9 @@ const SearchForm = props => {
       onSubmit={onSubmit}
       validate={validate}
       render={({ handleSubmit }) => (
-        <form onSubmit={handleSubmit} className='mt-3 d-inline-flex justify-content-evenly align-items-baseline w-100'>
-          <Field name='location' component={renderInput} label='Enter Location' />
-          <button className="btn btn-outline-primary">Search</button>
+        <form onSubmit={handleSubmit} className='my-3 d-inline-flex justify-content-evenly align-items-baseline w-100'>
+          <Field name='location' component={renderInput} label='Enter Your Location' />
+          <button className="btn btn-outline-primary ms-1">Search</button>
         </form>
       )}
     />

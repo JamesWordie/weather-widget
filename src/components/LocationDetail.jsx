@@ -24,13 +24,13 @@ class LocationDetail extends React.Component {
 
     const localTime = (this.props.weather.timezone_offset - 3600);
     return (
-      <div className="col-md-4 my-5 d-flex flex-column">
+      <div className="col-lg-4 col-12 my-5 d-flex flex-column justify-content-between">
         <div className="card">
           <div className="card-body">
             <span className="d-inline-flex justify-content-between w-100 align-items-center">
               <div className="d-inline-flex align-items-end">
                 <h4 className="card-title me-2">{locationResult.adminArea4}</h4>
-                <h6 className="card-title text-muted ml-2">{locationResult.adminArea1}</h6>
+                <h6 className="card-title ml-2">{locationResult.adminArea1}</h6>
               </div>
               <img src={`http://openweathermap.org/img/wn/${currentWeather.weather.map(w => w.icon)}@2x.png`} alt="weather.icon" />
             </span>
@@ -38,9 +38,9 @@ class LocationDetail extends React.Component {
               <h3 className="card-subtitle text-bold">{parseInt(currentWeather.temp)} C</h3>
               <p className="card-text">{currentWeather.weather.map(w => w.description)}</p>
             </span>
-            <span className="d-inline-flex mt-3">
-              <p className="me-2"><i className="fas fa-sun"></i> {new Date(currentWeather.sunrise * 1000).toLocaleTimeString('en-UK', {hour: '2-digit', minute: '2-digit'})}</p>
-              <p className="me-2"><i className="fas fa-moon"></i> {new Date(currentWeather.sunset * 1000).toLocaleTimeString('en-UK', {hour: '2-digit', minute: '2-digit'})}</p>
+            <span className="d-inline-flex mt-3 w-50 justify-content-between">
+              <p className="me-2 text-warning"><i className="fas fa-sun"></i> {new Date(currentWeather.sunrise * 1000).toLocaleTimeString('en-UK', {hour: '2-digit', minute: '2-digit'})}</p>
+              <p className="me-2 text-dark"><i className="fas fa-moon"></i> {new Date(currentWeather.sunset * 1000).toLocaleTimeString('en-UK', {hour: '2-digit', minute: '2-digit'})}</p>
             </span>
           </div>
         </div>
